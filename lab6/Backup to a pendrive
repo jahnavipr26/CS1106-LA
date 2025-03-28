@@ -1,1 +1,9 @@
 mkdir /tmp/Backups
+cp t1.c 
+cp test2.py
+cd /tmp
+tar -czvf Backups-2025-03-28.tar.gz -C /tmp
+undiscsctl mount -b /dev/sda1
+mv /tmp/Backups-2025-03-28.tar.gz /media/RVU/Pendrive
+undiscsctl unmount -b /dev/sda1
+rm -r/Backups
