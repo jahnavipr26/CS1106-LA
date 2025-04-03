@@ -1,0 +1,26 @@
+1) mkdir -p backup
+   cp *.txt backup/
+   echo "Contents of the backup directory:"
+   ls backup/
+
+2) echo "Listing all .tmp files in /tmp:"
+   ls /tmp/*.tmp 2>/dev/null || echo "No .tmp files found."
+   echo "Removing .tmp files..."
+   rm -f /tmp/*.tmp
+   echo "Listing /tmp again to confirm deletion:"
+   ls /tmp/*.tmp 2>/dev/null || echo "No .tmp files found."
+
+3) echo "Current Date: $(date)"
+  echo -e "\nLogged In Users:"
+  who
+  echo -e "\nSystem Uptime:"
+  uptime
+  echo -e "\nMemory Usage:"
+  free -h
+
+4) echo "Creating tar archive of /var/log..."
+   tar -cvf /tmp/logs_archive.tar /var/log
+   echo "Compressing the archive with gzip..."
+   gzip /tmp/logs_archive.tar
+   echo "Listing the created archive:"
+   ls -lh /tmp/logs_archive.tar.gz
